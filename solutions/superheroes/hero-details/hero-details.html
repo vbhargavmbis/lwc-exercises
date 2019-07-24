@@ -1,0 +1,21 @@
+<template>
+    <div class="slds-box my-box" >
+        <lightning-layout>
+            <lightning-layout-item padding="around-smal">
+                <img src={details.image}>
+            </lightning-layout-item>
+            <lightning-layout-item padding="around-small">
+                <br>
+                <div class="slds-text-heading_large">{details.name}</div>
+                <br><br>
+                <ul class="slds-has-dividers_bottom-space">
+                    <li class="slds-item">Secret Identity: {details.secretIdentity}</li>
+                    <li class="slds-item">Occupation: {details.occupation}</li>
+                    <li class="slds-item">City: {details.city}</li>
+                    <li class="slds-item">Abilities: {details.abilities}</li>
+                </ul>
+                
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>
