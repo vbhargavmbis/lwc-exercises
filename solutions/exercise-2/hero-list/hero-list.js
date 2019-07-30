@@ -1,4 +1,6 @@
 import {LightningElement} from 'lwc';
+
+// MOCK DATA
 const DATA = {
     'superheroes': [
         {
@@ -39,7 +41,10 @@ const DATA = {
         }
     ],
 };
+
 export default class HeroList extends LightningElement {
+    
+    // Getter to return the 'superheroes' array
     get superheroes() {
         return DATA.superheroes;
     }
@@ -47,12 +52,16 @@ export default class HeroList extends LightningElement {
     handleSelected(event) {
         const heroName = event.detail.name;
         let selectedHero = '';
+
+        // Match the name to an object in the superheroes array
         DATA.superheroes.forEach(superhero => {
             if (superhero.name === heroName) {
                 this.selectedHero = superhero;
             }
         });
 
+        // Fire a custom event with the identified object
+        // that contains all the information of the superhero
         this.dispatchEvent(
             new CustomEvent('c_selectedhero', {
                 bubbles: true,
