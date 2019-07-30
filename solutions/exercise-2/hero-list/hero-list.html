@@ -1,0 +1,5 @@
+<template>
+    <template for:each={superheroes} for:item="superhero">
+        <c-hero-tile onc_herotileselected={handleSelected} key={superhero.name} name={superhero.name} city={superhero.city} alias={superhero.alias} image={superhero.image}></c-hero-tile>
+    </template>
+</template>

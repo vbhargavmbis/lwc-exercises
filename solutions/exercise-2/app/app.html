@@ -1,0 +1,10 @@
+<template>
+    <div class="slds-grid">
+        <div class="slds-col slds-size_1-of-2">
+            <c-hero-list onc_selectedhero={handleSelected}></c-hero-list>
+        </div>
+        <div class="slds-col slds-size_1-of-2">
+            <c-hero-details details={selectedData}></c-hero-details>
+        </div>
+    </div>    
+</template>

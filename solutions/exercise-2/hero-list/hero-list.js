@@ -1,6 +1,4 @@
 import {LightningElement} from 'lwc';
-// import { heroData } from '../hero-data.json';
-
 const DATA = {
     'superheroes': [
         {
@@ -16,7 +14,7 @@ const DATA = {
             "name": "Superman",
             "image": "https://comicvine1.cbsistatic.com/uploads/scale_small/13/132327/6507037-28872490_1638064799604695_1250122498385004714_n.jpg",
             "city": "Metropolis",
-            "alias": "Kal-El",
+            "alias": "Man of Steel",
             "occupation": "Journalist",
             "abilities": "Flight / Super-human Strength / Lazer eyes",
             "secretIdentity": "Clark Kent"
@@ -41,10 +39,27 @@ const DATA = {
         }
     ],
 };
-
 export default class HeroList extends LightningElement {
-    
-    get heroInfo() {
-        return DATA;
+    get superheroes() {
+        return DATA.superheroes;
+    }
+
+    handleSelected(event) {
+        const heroName = event.detail.name;
+        let selectedHero = '';
+        DATA.superheroes.forEach(superhero => {
+            if (superhero.name === heroName) {
+                this.selectedHero = superhero;
+            }
+        });
+
+        this.dispatchEvent(
+            new CustomEvent('c_selectedhero', {
+                bubbles: true,
+                detail: {
+                    value: this.selectedHero
+                }
+            })
+        );
     }
 }

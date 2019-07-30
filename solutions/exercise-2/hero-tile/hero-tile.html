@@ -1,0 +1,11 @@
+<template>
+    <div class="slds-p-around_medium slds-box hero-box" onclick={handleClick}>
+            <lightning-tile label={name} type="media">
+                <lightning-avatar slot="media" size="large" src={image} fallback-icon-name="standard:person_account" alternative-text={name}></lightning-avatar>
+                <ul class="slds-list_horizontal slds-has-dividers_right">
+                    <li class="slds-item">{city}</li>
+                    <li class="slds-item">{alias}</li>
+                </ul>
+            </lightning-tile>
+        </div>
+</template>
