@@ -10,11 +10,10 @@ export default class HeroTile extends LightningElement {
 
     handleClick() {
 
-        // Firing a custom event that bubbles up; contains
-        // the name of the superhero that was clicked
+        // Firing a custom event that goes up one level to parent
+        // Contains the name of the superhero that was clicked
         this.dispatchEvent(
             new CustomEvent('c_herotileselected', {
-                bubbles: true,
                 detail: {
                     name: this.name
                 }

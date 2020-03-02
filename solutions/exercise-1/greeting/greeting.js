@@ -1,8 +1,8 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement } from 'lwc';
 
 export default class DataBinding extends LightningElement {
 
-    @track name = 'World';
+    name = 'World';
 
     handleChange(event) {
         this.name = event.target.value;

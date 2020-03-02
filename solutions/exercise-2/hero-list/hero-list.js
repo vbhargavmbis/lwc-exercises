@@ -64,7 +64,6 @@ export default class HeroList extends LightningElement {
         // that contains all the information of the superhero
         this.dispatchEvent(
             new CustomEvent('c_selectedhero', {
-                bubbles: true,
                 detail: {
                     value: this.selectedHero
                 }
